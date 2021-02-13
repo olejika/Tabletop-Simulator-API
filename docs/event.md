@@ -44,6 +44,8 @@ onSave() | Called whenever your game is saved. | [<span class="i"></span>](#onsa
 onScriptingButtonDown([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is pressed. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttondown)
 onScriptingButtonUp([<span class="tag int"></span>](types.md)&nbsp;index, [<span class="tag str"></span>](types.md)&nbsp;player_color) | Called when a scripting button (numpad by default) is released. The index range that is returned is 1-10. | [<span class="i"></span>](#onscriptingbuttonup)
 onUpdate() | Called **every frame**. | [<span class="i"></span>](#onupdate)
+tryRandomize([<span class="tag pla"></span>](types.md)&nbsp;person) | Called when a player try to manually shuffle/roll/randomize an object. | [<span class="i"></span>](#tryRandomize)
+tryObjectRandomize([<span class="tag obj"></span>](types.md)&nbsp;object, [<span class="tag pla"></span>](types.md)&nbsp;person) | Called when a player try to manually shuffle/roll/randomize an object. | [<span class="i"></span>](#tryObjectRandomize)
 
 
 
@@ -936,6 +938,52 @@ Called when a player first searches this Object.
 Called when a player finishes searching this Object.
 
 !!!info "onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
+
+---
+
+
+
+
+###onSearchEnd(...)
+
+Called when a player first searches this Object.
+
+!!!info "onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
+
+---
+
+
+###onSearchStart(...)
+
+Called when a player finishes searching this Object.
+
+!!!info "onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
+
+---
+
+
+
+###tryRandomize(...)
+
+Called when someone tries to manually shuffle/roll/randomize an object.
+Returning `#!lua false` will prevent randomization.
+
+!!!info "onSearchEnd([<span class="tag str"></span>](types.md)&nbsp;player_color)"
+	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
+
+---
+
+
+###tryObjectRandomize(...)
+
+Called when someone tries to manually shuffle/roll/randomize an object.
+Returning `#!lua false` will prevent randomization.
+
+!!!info "onSearchStart([<span class="tag str"></span>](types.md)&nbsp;player_color)"
+	* [<span class="tag obj"></span>](types.md)&nbsp;**object**: The Object which tried to shuffle/roll/randomize.
 	* [<span class="tag str"></span>](types.md)&nbsp;**player_color**: [Player Color](player-color.md) of the Player.
 
 ---
